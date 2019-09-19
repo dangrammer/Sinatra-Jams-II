@@ -1,6 +1,11 @@
 <h1>Welcome to <%= @artist.name %>'s page! </h1>
 <p>Age: <%= @artist.age %> </p>
 <p>Bio: <%= @artist.bio %> </p>
+<p>Plays:</p>
+<% @artist.instruments.each do |instrument| %>
+  <p><%= instrument.name %>
+<% end %> 
+
 
 <a href="/artists/<%= @artist.id %>/edit">Edit <%= @artist.name %>'s information.</a>
 <br/>

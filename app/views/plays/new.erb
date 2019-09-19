@@ -1,0 +1,17 @@
+<h1> Add an instrument to an artist</h1>
+
+<form method="POST" action="/plays">
+  Artist: 
+  <select name="artist[:artist_id]">
+    <% @artists.each do |artist| %>
+      <option value="<%= artist.id %>"><%= artist.name %></option>
+    <% end %>
+  </select>
+  Instrument:
+  <select name="instrument[:instrument_id]">
+      <% @instruments.each do |instrument| %>
+        <option value="<%= instrument.id %>"><%= instrument.name %></option>
+      <% end %>
+  </select>
+  <input type="submit" />
+</form>

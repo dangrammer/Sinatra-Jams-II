@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
   
   get "/artists" do
     @artists = Artist.all
+    @plays = Play.all
     erb :'artists/index'
   end
 
@@ -27,6 +28,7 @@ class ArtistsController < ApplicationController
   end
 
   post "/artists" do
+    # binding.pry
     @artist = Artist.create(params[:artist])
     redirect to "/artists"
   end
